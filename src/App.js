@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Header from "./Header";
 import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
-import RecipeView from "./RecipeView";
-
 
 function App() {
   // State for recipes
@@ -19,16 +17,16 @@ function App() {
 
   // Delete recipe function
   const deleteRecipe = (indexToDelete) => {
-    setRecipes((currentRecipes) => {
+    setRecipes((currentRecipes) => 
       currentRecipes.filter((recipe, index) => index !== indexToDelete)
-    })
+    )
   }
   
   return (
     <>  
       <Header/>
       <RecipeCreate createRecipe={createRecipe}/>
-      <RecipeView recipes={recipes} deleteRecipe={deleteRecipe}/>
+      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe}/>
     </>
   );
 }
